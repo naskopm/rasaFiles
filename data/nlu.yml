@@ -1,0 +1,48 @@
+version: "3.1"
+nlu:
+- synonym: happy
+  examples: |
+    - extatic
+    - ecstatic
+    - chill
+    - hood
+    - happy
+- intent: askingForMood
+  examples: |
+    - what is my mood
+    - how am I feeling
+- synonym: sad
+  examples: |
+    - devastated
+    - blue
+    - down
+    - sad
+
+- intent: mood_great
+  examples: |
+    - perfect [happy](mood)
+    - I'm feeling great [happy](mood)
+    - everything is awesome [happy](mood)
+    - I am [extatic](mood)
+    - I am [chill](mood)
+    - I am [hood](mood)
+    - I am [happy](mood)
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible [sad](mood)
+    - feeling sad today [sad](mood)
+    - not good at all [sad](mood)
+    - I am [devastated](mood)
+    - I am [blue](mood)
+    - I am [down](mood)
+- intent: greet
+  examples: |
+    - Hello
+    - hi
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

@@ -1,0 +1,52 @@
+version: "3.1"
+
+intents:
+  - greet
+  - mood_great
+  - mood_unhappy
+  - askingForMood
+  - orderPizza
+  - deny
+  - affirm
+  - show_mood
+  - order_pizza
+entities:
+  - mood
+  - food
+
+slots:
+  mood:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: mood
+
+forms:
+  mood_form:
+    required_slots:
+      - mood
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_cheer_up:
+    - text: "Here's something to cheer you up."
+
+  utter_did_that_help:
+    - text: "Did that help you?"
+
+  utter_happy:
+    - text: "I'm glad to hear that!"
+
+  utter_goodbye:
+    - text: "Goodbye!"
+  utter_iamabot:
+    - text: "Default Response"
+
+actions:
+  - extract_food_entity
+  - extract_mood_entity
+  - extract_slot
+  - utter_show_mood

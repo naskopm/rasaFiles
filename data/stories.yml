@@ -1,0 +1,24 @@
+version: "3.1"
+stories:
+  - story: happy
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: extract_mood_entity
+      - intent: askingForMood
+      - action: extract_slot
+  - story: mood_unhappy
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: extract_mood_entity
+      - intent: askingForMood
+      - action: extract_slot
+
+  - story: show
+    steps:
+      - intent: show_mood
+      - action: extract_mood_entity
+      - action: extract_slot
